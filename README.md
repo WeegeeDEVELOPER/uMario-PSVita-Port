@@ -3,8 +3,6 @@ A port of uMario (a widescreen remake of SMB NES) to the Playstation vita.
 
 uMario: https://github.com/jakowskidev/uMario_Jakowski
 
-# Requirements
-the PSV Homebrew SDK: https://vitasdk.org/
 
 # Controls
 - Cross = Jump
@@ -12,6 +10,9 @@ the PSV Homebrew SDK: https://vitasdk.org/
 - D-Pad = Move/Menu actions
 - Select = Pause/Back (in menu)
 - Start = Start (in menu)
+
+# Requirements
+the PSV Homebrew SDK: https://vitasdk.org/
 
 # Libraries (included in the CMakeLists.txt)
 - L2_mixer
