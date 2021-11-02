@@ -1,0 +1,5 @@
+/mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master/CMakeFiles/uMario.vpk.dir
+/mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master/CMakeFiles/uMario.self.dir
+/mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master/CMakeFiles/uMario.dir
