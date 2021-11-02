@@ -87,25 +87,6 @@ void CCore::vitaInputLoop(){
 	SceCtrlData ctrl;
 
 	sceCtrlPeekBufferPositive(0, &ctrl, 1);
-	
-	if ((ctrl.buttons & SCE_CTRL_CROSS) != 0 || (ctrl.buttons & SCE_CTRL_TRIANGLE) != 0){
-		mainEvent->type = SDL_KEYDOWN;
-	}
-	if ((ctrl.buttons & SCE_CTRL_CROSS) == 0 || (ctrl.buttons & SCE_CTRL_TRIANGLE) == 0){
-		if(CCFG::keySpace) {
-			CCFG::keySpace = false;
-		}
-	}
-	
-	if ((ctrl.buttons & SCE_CTRL_CIRCLE) != 0 || (ctrl.buttons & SCE_CTRL_SQUARE) != 0){
-		mainEvent->type = SDL_KEYDOWN;
-	}
-	if ((ctrl.buttons & SCE_CTRL_CIRCLE) == 0 || (ctrl.buttons & SCE_CTRL_SQUARE) == 0){
-		if(keyShift) {
-			oMap->getPlayer()->resetRun();
-			keyShift = false;
-		}
-	}
 
 	if ((ctrl.buttons & SCE_CTRL_START) != 0){
 		mainEvent->key.keysym.sym = SDLK_RETURN;
@@ -115,6 +96,25 @@ void CCore::vitaInputLoop(){
 	if ((ctrl.buttons & SCE_CTRL_SELECT) != 0){
 		mainEvent->key.keysym.sym = SDLK_ESCAPE;
 		mainEvent->type = SDL_KEYDOWN;
+	}
+	
+	if ((ctrl.buttons & SCE_CTRL_CROSS) != 0 || (ctrl.buttons & SCE_CTRL_TRIANGLE) != 0){
+		mainEvent->type = SDL_KEYDOWN;
+	}
+	else if ((ctrl.buttons & SCE_CTRL_CROSS) == 0 || (ctrl.buttons & SCE_CTRL_TRIANGLE) == 0){
+		if(CCFG::keySpace) {
+			CCFG::keySpace = false;
+		}
+	}
+	
+	if ((ctrl.buttons & SCE_CTRL_CIRCLE) != 0 || (ctrl.buttons & SCE_CTRL_SQUARE) != 0){
+		mainEvent->type = SDL_KEYDOWN;
+	}
+	else if ((ctrl.buttons & SCE_CTRL_CIRCLE) == 0 || (ctrl.buttons & SCE_CTRL_SQUARE) == 0){
+		if(keyShift) {
+			oMap->getPlayer()->resetRun();
+			keyShift = false;
+		}
 	}
 
 	
