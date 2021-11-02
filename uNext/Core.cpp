@@ -137,6 +137,7 @@ void CCore::vitaInputLoop(){
 
 	if ((ctrl.buttons & SCE_CTRL_DOWN) == 0){
 		if (keyS){
+			oMap->getPlayer()->setSquat(false);
 			keyS = false;
 		}
 	}

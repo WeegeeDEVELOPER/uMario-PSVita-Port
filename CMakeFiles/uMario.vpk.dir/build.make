@@ -68,7 +68,7 @@ uMario.vpk.out: uNext/files
 
 uMario.vpk_param.sfo: uMario.self
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating param.sfo for uMario.vpk"
-	/usr/local/vitasdk/bin/vita-mksfoex -d PARENTAL_LEVEL=1 -d PARENTAL_LEVEL=1 -s APP_VER=01.00 -s TITLE_ID=WDEV75837 "Super Mario Bros" /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uMario.vpk_param.sfo
+	/usr/local/vitasdk/bin/vita-mksfoex -d PARENTAL_LEVEL=1 -s APP_VER=01.00 -s TITLE_ID=WDEV75837 "Super Mario Bros" /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uMario.vpk_param.sfo
 
 uMario.vpk: CMakeFiles/uMario.vpk
 uMario.vpk: uMario.vpk.out
