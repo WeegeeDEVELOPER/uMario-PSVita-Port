@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master
+CMAKE_SOURCE_DIR = /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master
+CMAKE_BINARY_DIR = /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master/CMakeFiles /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/CMakeFiles /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

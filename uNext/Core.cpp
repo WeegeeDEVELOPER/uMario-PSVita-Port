@@ -87,67 +87,75 @@ void CCore::vitaInputLoop(){
 	SceCtrlData ctrl;
 
 	sceCtrlPeekBufferPositive(0, &ctrl, 1);
+	
+	if ((ctrl.buttons & SCE_CTRL_CROSS) != 0 || (ctrl.buttons & SCE_CTRL_TRIANGLE) != 0){
+		mainEvent->type = SDL_KEYDOWN;
+	}
+	if ((ctrl.buttons & SCE_CTRL_CROSS) == 0 || (ctrl.buttons & SCE_CTRL_TRIANGLE) == 0){
+		if(CCFG::keySpace) {
+			CCFG::keySpace = false;
+		}
+	}
+	
+	if ((ctrl.buttons & SCE_CTRL_CIRCLE) != 0 || (ctrl.buttons & SCE_CTRL_SQUARE) != 0){
+		mainEvent->type = SDL_KEYDOWN;
+	}
+	if ((ctrl.buttons & SCE_CTRL_CIRCLE) == 0 || (ctrl.buttons & SCE_CTRL_SQUARE) == 0){
+		if(keyShift) {
+			oMap->getPlayer()->resetRun();
+			keyShift = false;
+		}
+	}
 
-	if (ctrl.buttons == SCE_CTRL_START){
-		CCFG::getKeyString(SDLK_RETURN);
+	if ((ctrl.buttons & SCE_CTRL_START) != 0){
 		mainEvent->key.keysym.sym = SDLK_RETURN;
 		mainEvent->type = SDL_KEYDOWN;
 	}
 	
-	if (ctrl.buttons == SCE_CTRL_SELECT){
-		CCFG::getKeyString(SDLK_ESCAPE);
+	if ((ctrl.buttons & SCE_CTRL_SELECT) != 0){
 		mainEvent->key.keysym.sym = SDLK_ESCAPE;
 		mainEvent->type = SDL_KEYDOWN;
 	}
+
 	
-	if (ctrl.buttons == SCE_CTRL_CROSS){
-		CCFG::getKeyString(SDLK_SPACE);
-		mainEvent->key.keysym.sym = SDLK_SPACE;
-		mainEvent->key.keysym.sym = CCFG::keyIDSpace;
-		mainEvent->type = SDL_KEYDOWN;
-	}
-	
-	if (ctrl.buttons == SCE_CTRL_CIRCLE){
-		CCFG::getKeyString(SDLK_LSHIFT);
-		mainEvent->key.keysym.sym = SDLK_LSHIFT;
-		mainEvent->key.keysym.sym = CCFG::keyIDShift;
-		mainEvent->type = SDL_KEYDOWN;
-	}
-	
-	if (ctrl.buttons == SCE_CTRL_UP){
-		CCFG::getKeyString(SDLK_UP);
+	if ((ctrl.buttons & SCE_CTRL_UP) != 0){
 		mainEvent->key.keysym.sym = SDLK_UP;
-		mainEvent->key.keysym.sym = SDLK_w;
 		mainEvent->type = SDL_KEYDOWN;
 	}
-	
-	if (ctrl.buttons == SCE_CTRL_DOWN){
-		CCFG::getKeyString(SDLK_DOWN);
+	if ((ctrl.buttons & SCE_CTRL_DOWN) != 0){
 		mainEvent->key.keysym.sym = SDLK_DOWN;
-		mainEvent->key.keysym.sym = SDLK_s;
-		mainEvent->key.keysym.sym = CCFG::keyIDS;
 		mainEvent->type = SDL_KEYDOWN;
 	}
-	
-	if (ctrl.buttons == SCE_CTRL_LEFT){
-		CCFG::getKeyString(SDLK_LEFT);
+	if ((ctrl.buttons & SCE_CTRL_LEFT) != 0){
 		mainEvent->key.keysym.sym = SDLK_LEFT;
-		mainEvent->key.keysym.sym = SDLK_a;
-		mainEvent->key.keysym.sym = CCFG::keyIDA;
 		mainEvent->type = SDL_KEYDOWN;
 	}
-	
-	if (ctrl.buttons == SCE_CTRL_RIGHT){
-		CCFG::getKeyString(SDLK_RIGHT);
+	if ((ctrl.buttons & SCE_CTRL_RIGHT) != 0){
 		mainEvent->key.keysym.sym = SDLK_RIGHT;
-		mainEvent->key.keysym.sym = SDLK_d;
-		mainEvent->key.keysym.sym = CCFG::keyIDD;
 		mainEvent->type = SDL_KEYDOWN;
 	}
 
-	if (ctrl.buttons != SCE_CTRL_START && ctrl.buttons != SCE_CTRL_SELECT && ctrl.buttons != SCE_CTRL_CROSS && ctrl.buttons != SCE_CTRL_CIRCLE && ctrl.buttons != SCE_CTRL_UP && ctrl.buttons != SCE_CTRL_LEFT && ctrl.buttons != SCE_CTRL_DOWN && ctrl.buttons != SCE_CTRL_RIGHT){
-		mainEvent->type = SDL_KEYUP;
+	if ((ctrl.buttons & SCE_CTRL_DOWN) == 0){
+		if (keyS){
+			keyS = false;
+		}
 	}
+	if ((ctrl.buttons & SCE_CTRL_LEFT) == 0){
+		if(keyAPressed){
+			keyAPressed = false;
+		}
+	}
+	if ((ctrl.buttons & SCE_CTRL_RIGHT) == 0){
+		if(keyDPressed){
+			keyDPressed = false;
+		}
+	}
+
+	//mainEvent->type = SDL_KEYDOWN;
+
+	Input();
+
+	mainEvent->type = SDL_KEYUP;
 }
 
 void CCore::mainLoop() {
@@ -163,7 +171,7 @@ void CCore::mainLoop() {
 
 
 		vitaInputLoop();
-		Input();
+		//Input();
 		MouseInput();
 		Update();
 		Draw();
@@ -207,13 +215,13 @@ void CCore::InputMenu() {
 		CCFG::getMM()->setKey(mainEvent->key.keysym.sym);
 
 		switch(mainEvent->key.keysym.sym) {
-			case SDLK_s: case SDLK_DOWN:
+			case SDLK_s: case SDLK_UP:
 				if(!keyMenuPressed) {
 					CCFG::getMM()->keyPressed(2);
 					keyMenuPressed = true;
 				}
 				break;
-			case SDLK_w: case SDLK_UP:
+			case SDLK_w: case SDLK_DOWN:
 				if(!keyMenuPressed) {
 					CCFG::getMM()->keyPressed(0);
 					keyMenuPressed = true;
@@ -233,13 +241,13 @@ void CCore::InputMenu() {
 				break;
 			case SDLK_LEFT: case SDLK_d:
 				if(!keyMenuPressed) {
-					CCFG::getMM()->keyPressed(1);
+					CCFG::getMM()->keyPressed(3);
 					keyMenuPressed = true;
 				}
 				break;
 			case SDLK_RIGHT: case SDLK_a:
 				if(!keyMenuPressed) {
-					CCFG::getMM()->keyPressed(3);
+					CCFG::getMM()->keyPressed(1);
 					keyMenuPressed = true;
 				}
 				break;
@@ -270,8 +278,13 @@ void CCore::InputPlayer() {
 		}
 	}
 
+	sceCtrlSetSamplingMode(SCE_CTRL_MODE_ANALOG);
+	SceCtrlData ctrl;
+
+	sceCtrlPeekBufferPositive(0, &ctrl, 1);
+
 	if(mainEvent->type == SDL_KEYUP) {
-			if(mainEvent->key.keysym.sym == CCFG::keyIDD) {
+			if(/*mainEvent->key.keysym.sym == CCFG::keyIDD*/(ctrl.buttons & SCE_CTRL_RIGHT) == 0) {
 				if(firstDir) {
 					firstDir = false;
 				}
@@ -279,12 +292,12 @@ void CCore::InputPlayer() {
 				keyDPressed = false;
 			}
 
-			if(mainEvent->key.keysym.sym == CCFG::keyIDS) {
+			if(/*mainEvent->key.keysym.sym == CCFG::keyIDS*/(ctrl.buttons & SCE_CTRL_DOWN) == 0) {
 				oMap->getPlayer()->setSquat(false);
 				keyS = false;
 			}
 		
-			if(mainEvent->key.keysym.sym == CCFG::keyIDA) {
+			if(/*mainEvent->key.keysym.sym == CCFG::keyIDA*/(ctrl.buttons & SCE_CTRL_LEFT) == 0) {
 				if(!firstDir) {
 					firstDir = true;
 				}
@@ -292,11 +305,11 @@ void CCore::InputPlayer() {
 				keyAPressed = false;
 			}
 		
-			if(mainEvent->key.keysym.sym == CCFG::keyIDSpace) {
+			if(/*mainEvent->key.keysym.sym == CCFG::keyIDSpace*/(ctrl.buttons & SCE_CTRL_CROSS) == 0 || (ctrl.buttons & SCE_CTRL_TRIANGLE) == 0) {
 				CCFG::keySpace = false;
 			}
 		
-			if(mainEvent->key.keysym.sym == CCFG::keyIDShift) {
+			if(/*mainEvent->key.keysym.sym == CCFG::keyIDShift*/(ctrl.buttons & SCE_CTRL_CIRCLE) == 0 || (ctrl.buttons & SCE_CTRL_SQUARE) == 0) {
 				if(keyShift) {
 					oMap->getPlayer()->resetRun();
 					keyShift = false;
@@ -310,35 +323,35 @@ void CCore::InputPlayer() {
 	}
 
 	if(mainEvent->type == SDL_KEYDOWN) {
-		if(mainEvent->key.keysym.sym == CCFG::keyIDD) {
+		if(/*mainEvent->key.keysym.sym == CCFG::keyIDD*/(ctrl.buttons & SCE_CTRL_RIGHT) != 0) {
 			keyDPressed = true;
 			if(!keyAPressed) {
 				firstDir = true;
 			}
 		}
 
-		if(mainEvent->key.keysym.sym == CCFG::keyIDS) {
+		if(/*mainEvent->key.keysym.sym == CCFG::keyIDS*/(ctrl.buttons & SCE_CTRL_DOWN) != 0) {
 			if(!keyS) {
 				keyS = true;
 				if(!oMap->getUnderWater() && !oMap->getPlayer()->getInLevelAnimation()) oMap->getPlayer()->setSquat(true);
 			}
 		}
 		
-		if(mainEvent->key.keysym.sym == CCFG::keyIDA) {
+		if(/*mainEvent->key.keysym.sym == CCFG::keyIDA*/(ctrl.buttons & SCE_CTRL_LEFT) != 0) {
 			keyAPressed = true;
 			if(!keyDPressed) {
 				firstDir = false;
 			}
 		}
 		
-		if(mainEvent->key.keysym.sym == CCFG::keyIDSpace) {
+		if(/*mainEvent->key.keysym.sym == CCFG::keyIDSpace*/(ctrl.buttons & SCE_CTRL_CROSS) != 0 || (ctrl.buttons & SCE_CTRL_TRIANGLE) != 0) {
 			if(!CCFG::keySpace) {
 				oMap->getPlayer()->jump();
 				CCFG::keySpace = true;
 			}
 		}
 		
-		if(mainEvent->key.keysym.sym == CCFG::keyIDShift) {
+		if(/*mainEvent->key.keysym.sym == CCFG::keyIDShift*/(ctrl.buttons & SCE_CTRL_CIRCLE) != 0 || (ctrl.buttons & SCE_CTRL_SQUARE) != 0) {
 			if(!keyShift) {
 				oMap->getPlayer()->startRun();
 				keyShift = true;

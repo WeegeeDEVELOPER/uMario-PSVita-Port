@@ -34,7 +34,7 @@ private:
 	static Map* oMap;
 
 	// ----- Methods
-
+	//void vitaInputLoop();
 	void Input();
 	void MouseInput();
 	void InputPlayer();

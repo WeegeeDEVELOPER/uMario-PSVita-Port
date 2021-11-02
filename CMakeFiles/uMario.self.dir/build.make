@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master
+CMAKE_SOURCE_DIR = /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master
+CMAKE_BINARY_DIR = /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port
 
 # Utility rule file for uMario.self.
 
@@ -54,15 +54,15 @@ CMAKE_BINARY_DIR = /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMari
 include CMakeFiles/uMario.self.dir/progress.make
 
 CMakeFiles/uMario.self: uMario.self.out
-	/usr/bin/cmake -E copy /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master/uMario.self.out uMario.self
+	/usr/bin/cmake -E copy /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uMario.self.out uMario.self
 
 uMario.self.out: uMario.velf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Creating SELF uMario.self"
-	/usr/local/vitasdk/bin/vita-make-fself -c -s /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master/uMario.velf /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master/uMario.self.out
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Creating SELF uMario.self"
+	/usr/local/vitasdk/bin/vita-make-fself -c -s /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uMario.velf /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uMario.self.out
 
 uMario.velf: uMario
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Converting to Sony ELF uMario.velf"
-	/usr/local/vitasdk/bin/vita-elf-create /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master/uMario /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master/uMario.velf
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Converting to Sony ELF uMario.velf"
+	/usr/local/vitasdk/bin/vita-elf-create /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uMario /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uMario.velf
 
 uMario.self: CMakeFiles/uMario.self
 uMario.self: uMario.self.out
@@ -81,6 +81,6 @@ CMakeFiles/uMario.self.dir/clean:
 .PHONY : CMakeFiles/uMario.self.dir/clean
 
 CMakeFiles/uMario.self.dir/depend:
-	cd /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master /mnt/c/Users/Gebruiker/Downloads/uMario_Jakowski-master/uMario_Jakowski-master/CMakeFiles/uMario.self.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/CMakeFiles/uMario.self.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uMario.self.dir/depend
 

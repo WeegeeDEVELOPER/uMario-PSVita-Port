@@ -20,7 +20,7 @@ FireBall::FireBall(int iXPos, int iYPos, int radius, int nSliceID, bool moveDire
 
 	this->minionSpawned = true;
 	
-	//this->slice = 2 * M_PI / 360;
+	this->slice = 2 * 3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679f / 360; 
 	this->sliceID = nSliceID;
 	this->angle = slice * sliceID;
 
