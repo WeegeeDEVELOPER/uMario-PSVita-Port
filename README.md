@@ -6,6 +6,13 @@ uMario: https://github.com/jakowskidev/uMario_Jakowski
 # Requirements
 the PSV Homebrew SDK: https://vitasdk.org/
 
+# Controls
+- Cross = Jump
+- Circle = Run/Shoot
+- D-Pad = Move/Menu actions
+- Select = Pause/Back (in menu)
+- Start = Start (in menu)
+
 # Libraries (included in the CMakeLists.txt)
 - L2_mixer
 - SDL2_gfx
