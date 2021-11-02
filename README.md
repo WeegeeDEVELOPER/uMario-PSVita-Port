@@ -1,4 +1,4 @@
-# uMario-PSVita-Port
+# uMario PSVita Port
 A port of uMario (a widescreen remake of SMB NES) to the Playstation vita.
 
 uMario: https://github.com/jakowskidev/uMario_Jakowski
