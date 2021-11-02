@@ -1,11 +1,12 @@
-# uMario-PSVita-Port
+# uMario PSVita Port
 A port of uMario (a widescreen remake of SMB NES) to the Playstation vita.
+
 uMario: https://github.com/jakowskidev/uMario_Jakowski
 
-# requirements
+# Requirements
 the PSV Homebrew SDK: https://vitasdk.org/
 
-# libraries (included in the CMakeLists.txt
+# Libraries (included in the CMakeLists.txt)
 - L2_mixer
 - SDL2_gfx
 - SDL2_image
