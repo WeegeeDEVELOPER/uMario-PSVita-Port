@@ -135,6 +135,11 @@ void CCore::vitaInputLoop(){
 		mainEvent->type = SDL_KEYDOWN;
 	}
 
+	if ((ctrl.buttons & SCE_CTRL_UP) == 0){
+		if(keyW){
+			keyW = false;
+		}
+	}
 	if ((ctrl.buttons & SCE_CTRL_DOWN) == 0){
 		if (keyS){
 			oMap->getPlayer()->setSquat(false);
@@ -150,6 +155,16 @@ void CCore::vitaInputLoop(){
 		if(keyDPressed){
 			keyDPressed = false;
 		}
+	}
+
+	float menuKeyDelay = 2.f;
+	if (menuKeyDelay <= 0.f){
+		if (keyMenuPressed){
+			keyMenuPressed = false;
+		}
+	}
+	else{
+		menuKeyDelay -= 1.f;
 	}
 
 	//mainEvent->type = SDL_KEYDOWN;
@@ -212,17 +227,61 @@ void CCore::Input() {
 }
 
 void CCore::InputMenu() {
+	
+	sceCtrlSetSamplingMode(SCE_CTRL_MODE_ANALOG);
+	SceCtrlData ctrl;
+
+	sceCtrlPeekBufferPositive(0, &ctrl, 1);
+
 	if(mainEvent->type == SDL_KEYDOWN) {
 		CCFG::getMM()->setKey(mainEvent->key.keysym.sym);
 
+		if ((ctrl.buttons & SCE_CTRL_UP) != 0){
+			if(!keyMenuPressed) {
+				CCFG::getMM()->keyPressed(0);
+				keyMenuPressed = true;
+			}
+		}
+		if ((ctrl.buttons & SCE_CTRL_DOWN) != 0){
+			if(!keyMenuPressed) {
+				CCFG::getMM()->keyPressed(2);
+				keyMenuPressed = true;
+			}
+		}
+		if ((ctrl.buttons & SCE_CTRL_START) != 0){
+			if(!keyMenuPressed) {
+				CCFG::getMM()->enter();
+				keyMenuPressed = true;
+			}
+		}
+		if ((ctrl.buttons & SCE_CTRL_SELECT) != 0){
+			if(!keyMenuPressed) {
+				CCFG::getMM()->escape();
+				keyMenuPressed = true;
+			}
+		}
+		if ((ctrl.buttons & SCE_CTRL_LEFT) != 0){
+			if(!keyMenuPressed) {
+				CCFG::getMM()->keyPressed(3);
+				keyMenuPressed = true;
+			}
+		}
+		if ((ctrl.buttons & SCE_CTRL_RIGHT) != 0){
+			if(!keyMenuPressed) {
+				CCFG::getMM()->keyPressed(1);
+				keyMenuPressed = true;
+			}
+		}
+
+		/*
 		switch(mainEvent->key.keysym.sym) {
-			case SDLK_s: case SDLK_UP:
+			case SDLK_w: case SDLK_UP:
 				if(!keyMenuPressed) {
 					CCFG::getMM()->keyPressed(2);
 					keyMenuPressed = true;
 				}
 				break;
-			case SDLK_w: case SDLK_DOWN:
+			case SDLK_s: case SDLK_DOWN:
 				if(!keyMenuPressed) {
 					CCFG::getMM()->keyPressed(0);
 					keyMenuPressed = true;
@@ -253,6 +312,7 @@ void CCore::InputMenu() {
 				}
 				break;
 		}
+		*/
 	}
 
 	if(mainEvent->type == SDL_KEYUP) {
