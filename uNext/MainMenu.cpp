@@ -36,8 +36,8 @@ void MainMenu::Update() {
 void MainMenu::Draw(SDL_Renderer* rR) {
 	CCFG::getSMBLOGO()->Draw(rR, 80, 48);
 	Menu::Draw(rR);
-	CCFG::getText()->Draw(rR, "UMARIO VERSION 1.2.2", 4, CCFG::GAME_HEIGHT - 4 - 8, 8, 0, 0, 0);
-	CCFG::getText()->Draw(rR, "UMARIO VERSION 1.2.2", 5, CCFG::GAME_HEIGHT - 5 - 8, 8, 255, 255, 255);
+	CCFG::getText()->Draw(rR, "UMARIO VERSION 1.2.3", 4, CCFG::GAME_HEIGHT - 4 - 8, 8, 0, 0, 0);
+	CCFG::getText()->Draw(rR, "UMARIO VERSION 1.2.3", 5, CCFG::GAME_HEIGHT - 5 - 8, 8, 255, 255, 255);
 
 	if(selectWorld) {
 		SDL_SetRenderDrawBlendMode(rR, SDL_BLENDMODE_BLEND);

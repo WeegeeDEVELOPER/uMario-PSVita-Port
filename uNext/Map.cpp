@@ -10009,7 +10009,7 @@ void Map::structEnd(int X, int Y, int iHeight) {
 		lMap[X][Y + i]->setBlockID(iLevelType == 4 ? 123 : 40);
 	}
 
-	oFlag = new Flag(X*32 - 16, Y + iHeight + 72);
+	oFlag = new Flag(X*32 - 16, Y + iHeight + 162);
 
 	lMap[X][Y + iHeight]->setBlockID(iLevelType == 4 ? 124 : 41);
 

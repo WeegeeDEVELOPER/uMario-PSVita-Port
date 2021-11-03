@@ -134,21 +134,17 @@ string
 Menu.h
 /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/Menu.h
 
+/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/MainMenu.cpp
+MainMenu.h
+/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/MainMenu.h
+CFG.h
+/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/CFG.h
+Core.h
+/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/Core.h
+
 /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/MainMenu.h
 Menu.h
 /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/Menu.h
-
-/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/Map.cpp
-Map.h
-/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/Map.h
-CFG.h
-/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/CFG.h
-math.h
-/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/math.h
-stdlib.h
-/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/stdlib.h
-time.h
-/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/time.h
 
 /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/Map.h
 header.h
@@ -301,16 +297,6 @@ Minion.h
 /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/Platform.h
 header.h
 /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/header.h
-
-/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/Player.cpp
-Player.h
-/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/Player.h
-Core.h
-/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/Core.h
-stdlib.h
-/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/stdlib.h
-time.h
-/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/time.h
 
 /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/Player.h
 Sprite.h
