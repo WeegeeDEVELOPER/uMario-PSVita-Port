@@ -48,7 +48,7 @@ void LoadingMenu::Draw(SDL_Renderer* rR) {
 			CCore::getMap()->getBlock(180)->getSprite()->getTexture()->Draw(rR, 410, 210);
 		}
 		CCFG::getText()->Draw(rR, std::to_string(CCore::getMap()->getPlayer()->getNumOfLives()), 432, 208);
-		CCFG::getText()->DrawCenterX(rR, "REMEMBER THAT YOU CAN RUN WITH " + CCFG::getKeyString(CCFG::keyIDShift), 400, 16);
+		//CCFG::getText()->DrawCenterX(rR, "REMEMBER THAT YOU CAN RUN WITH " + CCFG::getKeyString(CCFG::keyIDShift), 400, 16);
 	} else {
 		CCore::getMap()->DrawGameLayout(rR);
 		CCFG::getText()->DrawCenterX(rR, "GAME OVER", 240, 16);

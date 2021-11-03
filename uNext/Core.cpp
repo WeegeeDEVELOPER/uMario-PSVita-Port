@@ -25,6 +25,8 @@ bool CCore::keyShift = false;
 bool CCore::keyAPressed = false;
 bool CCore::keyDPressed = false;
 
+float menuKeyDelay = 30.f;
+
 CCore::CCore(void) {
 	this->quitGame = false;
 	this->iFPS = 0;
@@ -89,12 +91,12 @@ void CCore::vitaInputLoop(){
 	sceCtrlPeekBufferPositive(0, &ctrl, 1);
 
 	if ((ctrl.buttons & SCE_CTRL_START) != 0){
-		mainEvent->key.keysym.sym = SDLK_RETURN;
+		//mainEvent->key.keysym.sym = SDLK_RETURN;
 		mainEvent->type = SDL_KEYDOWN;
 	}
 	
 	if ((ctrl.buttons & SCE_CTRL_SELECT) != 0){
-		mainEvent->key.keysym.sym = SDLK_ESCAPE;
+		//mainEvent->key.keysym.sym = SDLK_ESCAPE;
 		mainEvent->type = SDL_KEYDOWN;
 	}
 	
@@ -119,19 +121,19 @@ void CCore::vitaInputLoop(){
 
 	
 	if ((ctrl.buttons & SCE_CTRL_UP) != 0){
-		mainEvent->key.keysym.sym = SDLK_UP;
+		//mainEvent->key.keysym.sym = SDLK_UP;
 		mainEvent->type = SDL_KEYDOWN;
 	}
 	if ((ctrl.buttons & SCE_CTRL_DOWN) != 0){
-		mainEvent->key.keysym.sym = SDLK_DOWN;
+		//mainEvent->key.keysym.sym = SDLK_DOWN;
 		mainEvent->type = SDL_KEYDOWN;
 	}
 	if ((ctrl.buttons & SCE_CTRL_LEFT) != 0){
-		mainEvent->key.keysym.sym = SDLK_LEFT;
+		//mainEvent->key.keysym.sym = SDLK_LEFT;
 		mainEvent->type = SDL_KEYDOWN;
 	}
 	if ((ctrl.buttons & SCE_CTRL_RIGHT) != 0){
-		mainEvent->key.keysym.sym = SDLK_RIGHT;
+		//mainEvent->key.keysym.sym = SDLK_RIGHT;
 		mainEvent->type = SDL_KEYDOWN;
 	}
 
@@ -157,13 +159,11 @@ void CCore::vitaInputLoop(){
 		}
 	}
 
-	float menuKeyDelay = 2.f;
 	if (menuKeyDelay <= 0.f){
-		if (keyMenuPressed){
-			keyMenuPressed = false;
-		}
+		keyMenuPressed = false;
+		menuKeyDelay = 20.f;
 	}
-	else{
+	else if (keyMenuPressed){
 		menuKeyDelay -= 1.f;
 	}
 
@@ -171,7 +171,7 @@ void CCore::vitaInputLoop(){
 
 	Input();
 
-	mainEvent->type = SDL_KEYUP;
+	//mainEvent->type = SDL_KEYUP;
 }
 
 void CCore::mainLoop() {
@@ -234,7 +234,7 @@ void CCore::InputMenu() {
 	sceCtrlPeekBufferPositive(0, &ctrl, 1);
 
 	if(mainEvent->type == SDL_KEYDOWN) {
-		CCFG::getMM()->setKey(mainEvent->key.keysym.sym);
+		//CCFG::getMM()->setKey(mainEvent->key.keysym.sym);
 
 		if ((ctrl.buttons & SCE_CTRL_UP) != 0){
 			if(!keyMenuPressed) {
@@ -248,13 +248,13 @@ void CCore::InputMenu() {
 				keyMenuPressed = true;
 			}
 		}
-		if ((ctrl.buttons & SCE_CTRL_START) != 0){
+		if ((ctrl.buttons & SCE_CTRL_START) != 0 || (ctrl.buttons & SCE_CTRL_CROSS) != 0){
 			if(!keyMenuPressed) {
 				CCFG::getMM()->enter();
 				keyMenuPressed = true;
 			}
 		}
-		if ((ctrl.buttons & SCE_CTRL_SELECT) != 0){
+		if ((ctrl.buttons & SCE_CTRL_SELECT) != 0 || (ctrl.buttons & SCE_CTRL_CIRCLE) != 0){
 			if(!keyMenuPressed) {
 				CCFG::getMM()->escape();
 				keyMenuPressed = true;
@@ -416,6 +416,23 @@ void CCore::InputPlayer() {
 			if(!keyShift) {
 				oMap->getPlayer()->startRun();
 				keyShift = true;
+			}
+		}
+
+		if(/*mainEvent->key.keysym.sym == CCFG::keyIDShift*/(ctrl.buttons & SCE_CTRL_START)) {
+			if(!keyMenuPressed) {
+				CCFG::getMM()->enter();
+				keyMenuPressed = true;
+			}
+		}
+
+		if(/*mainEvent->key.keysym.sym == CCFG::keyIDShift*/(ctrl.buttons & SCE_CTRL_SELECT)) {
+			if(!keyMenuPressed && CCFG::getMM()->getViewID() == CCFG::getMM()->eGame) {
+				CCFG::getMM()->resetActiveOptionID(CCFG::getMM()->ePasue);
+				CCFG::getMM()->setViewID(CCFG::getMM()->ePasue);
+				CCFG::getMusic()->PlayChunk(CCFG::getMusic()->cPASUE);
+				CCFG::getMusic()->PauseMusic();
+				keyMenuPressed = true;
 			}
 		}
 
