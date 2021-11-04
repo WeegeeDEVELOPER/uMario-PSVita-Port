@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port
+CMAKE_SOURCE_DIR = /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port
+CMAKE_BINARY_DIR = /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port
 
 # Utility rule file for uMario.vpk.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port
 include CMakeFiles/uMario.vpk.dir/progress.make
 
 CMakeFiles/uMario.vpk: uMario.vpk.out
-	/usr/bin/cmake -E copy /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uMario.vpk.out uMario.vpk
+	/usr/bin/cmake -E copy /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/uMario.vpk.out uMario.vpk
 
 uMario.vpk.out: uMario.vpk_param.sfo
 uMario.vpk.out: uMario.self
@@ -63,12 +63,12 @@ uMario.vpk.out: sce_sys/livearea/contents/bg.png
 uMario.vpk.out: sce_sys/livearea/contents/startup.png
 uMario.vpk.out: sce_sys/livearea/contents/template.xml
 uMario.vpk.out: uNext/files
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building vpk uMario.vpk"
-	/usr/local/vitasdk/bin/vita-pack-vpk -a /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/sce_sys/icon0.png=sce_sys/icon0.png -a /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/sce_sys/livearea/contents/bg.png=sce_sys/livearea/contents/bg.png -a /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/sce_sys/livearea/contents/startup.png=sce_sys/livearea/contents/startup.png -a /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/sce_sys/livearea/contents/template.xml=sce_sys/livearea/contents/template.xml -a /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uNext/files=uNext/files -s /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uMario.vpk_param.sfo -b /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uMario.self /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uMario.vpk.out
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building vpk uMario.vpk"
+	/usr/local/vitasdk/bin/vita-pack-vpk -a /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/sce_sys/icon0.png=sce_sys/icon0.png -a /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/sce_sys/livearea/contents/bg.png=sce_sys/livearea/contents/bg.png -a /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/sce_sys/livearea/contents/startup.png=sce_sys/livearea/contents/startup.png -a /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/sce_sys/livearea/contents/template.xml=sce_sys/livearea/contents/template.xml -a /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/uNext/files=uNext/files -s /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/uMario.vpk_param.sfo -b /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/uMario.self /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/uMario.vpk.out
 
 uMario.vpk_param.sfo: uMario.self
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating param.sfo for uMario.vpk"
-	/usr/local/vitasdk/bin/vita-mksfoex -d PARENTAL_LEVEL=1 -d PARENTAL_LEVEL=1 -s APP_VER=01.00 -s TITLE_ID=WDEV75837 "Super Mario Bros" /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/uMario.vpk_param.sfo
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating param.sfo for uMario.vpk"
+	/usr/local/vitasdk/bin/vita-mksfoex -d PARENTAL_LEVEL=1 -d PARENTAL_LEVEL=1 -s APP_VER=01.00 -s TITLE_ID=WDEV75837 "Super Mario Bros" /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/uMario.vpk_param.sfo
 
 uMario.vpk: CMakeFiles/uMario.vpk
 uMario.vpk: uMario.vpk.out
@@ -87,6 +87,6 @@ CMakeFiles/uMario.vpk.dir/clean:
 .PHONY : CMakeFiles/uMario.vpk.dir/clean
 
 CMakeFiles/uMario.vpk.dir/depend:
-	cd /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/CMakeFiles/uMario.vpk.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/CMakeFiles/uMario.vpk.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uMario.vpk.dir/depend
 

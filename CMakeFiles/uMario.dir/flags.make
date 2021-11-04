@@ -6,5 +6,5 @@ CXX_FLAGS =  -Wl,-q -std=c++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/../common 
+CXX_INCLUDES = -I/mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/../common 
 

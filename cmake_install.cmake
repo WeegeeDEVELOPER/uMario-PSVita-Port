@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port
+# Install script for directory: /mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/Users/bashe/Desktop/vita_projects/uMario-PSVita-Port/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

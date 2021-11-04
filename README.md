@@ -14,7 +14,7 @@ uMario: https://github.com/jakowskidev/uMario_Jakowski
 # Requirements
 the PSV Homebrew SDK: https://vitasdk.org/
 
-# Libraries (included in the CMakeLists.txt)
+# Libraries (included in the vita SDK)
 - SDL2_mixer
 - SDL2_gfx
 - SDL2_image

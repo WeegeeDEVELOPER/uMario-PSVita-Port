@@ -3649,9 +3649,9 @@ void Map::resetGameData() {
 
 	oPlayer->setNumOfLives(3);
 
-	loadLVL();
-
 	setSpawnPoint();
+
+	loadLVL();
 }
 
 void Map::loadLVL() {
@@ -8782,7 +8782,7 @@ void Map::EndUse() {
 
 			oEvent->newMapXPos = 0;
 			oEvent->newPlayerXPos = 84;
-			oEvent->newPlayerYPos = 150;
+			oEvent->newPlayerYPos = 260;
 			oEvent->newMoveMap = true;
 
 			oPlayer->setMoveDirection(true);
@@ -8864,7 +8864,7 @@ void Map::EndUse() {
 
 			oEvent->newMapXPos = 0;
 			oEvent->newPlayerXPos = 84;
-			oEvent->newPlayerYPos = 150;
+			oEvent->newPlayerYPos = 260;
 			oEvent->newMoveMap = true;
 
 			oPlayer->setMoveDirection(true);
@@ -8938,7 +8938,7 @@ void Map::EndUse() {
 
 			oEvent->newMapXPos = 0;
 			oEvent->newPlayerXPos = 84;
-			oEvent->newPlayerYPos = 150;
+			oEvent->newPlayerYPos = 260;
 			oEvent->newMoveMap = true;
 
 			oEvent->vOLDDir.push_back(oEvent->eRIGHT);
@@ -9012,7 +9012,7 @@ void Map::EndUse() {
 
 			oEvent->newMapXPos = 0;
 			oEvent->newPlayerXPos = 84;
-			oEvent->newPlayerYPos = 150;
+			oEvent->newPlayerYPos = 260;
 			oEvent->newMoveMap = true;
 
 			oEvent->vOLDDir.push_back(oEvent->eRIGHT);
@@ -9089,7 +9089,7 @@ void Map::EndUse() {
 
 			oEvent->newMapXPos = 0;
 			oEvent->newPlayerXPos = 84;
-			oEvent->newPlayerYPos = 150;
+			oEvent->newPlayerYPos = 260;
 			oEvent->newMoveMap = true;
 
 			oEvent->vOLDDir.push_back(oEvent->eRIGHT);
@@ -9176,7 +9176,7 @@ void Map::EndUse() {
 
 			oEvent->newMapXPos = 0;
 			oEvent->newPlayerXPos = 84;
-			oEvent->newPlayerYPos = 150;
+			oEvent->newPlayerYPos = 260;
 			oEvent->newMoveMap = true;
 
 			oEvent->vOLDDir.push_back(oEvent->eRIGHT);
@@ -9258,7 +9258,7 @@ void Map::EndUse() {
 
 			oEvent->newMapXPos = 0;
 			oEvent->newPlayerXPos = 84;
-			oEvent->newPlayerYPos = 150;
+			oEvent->newPlayerYPos = 250;
 			oEvent->newMoveMap = true;
 
 			oPlayer->setMoveDirection(true);
@@ -9334,7 +9334,7 @@ void Map::EndUse() {
 
 			oEvent->newMapXPos = 0;
 			oEvent->newPlayerXPos = 84;
-			oEvent->newPlayerYPos = 150;
+			oEvent->newPlayerYPos = 260;
 			oEvent->newMoveMap = true;
 
 			oPlayer->setMoveDirection(true);

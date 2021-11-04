@@ -87,7 +87,7 @@ void AboutMenu::Draw(SDL_Renderer* rR) {
 	//CCFG::getText()->DrawWS(rR, "UNIWERSYTET SLASKI W KATOWICACH", 150, 206, 0, 0, 0);
 	//CCFG::getText()->DrawWS(rR, "MAJ 2014", 150, 224, 0, 0, 0);
 
-	CCFG::getText()->DrawWS(rR, "UMARIO PORT V1.2.4", 150, 264, 0, 0, 0);
+	CCFG::getText()->DrawWS(rR, "UMARIO PORT V1.2.5", 150, 264, 0, 0, 0);
 
 	//CCFG::getText()->DrawWS(rR, std::to_string(iNumOfUnits), 5, CCFG::GAME_HEIGHT - 21, 0, 0, 0);
 
