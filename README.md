@@ -1,6 +1,8 @@
 # uMario PSVita Port
 A port of uMario (a widescreen remake of SMB NES) to the Playstation vita.
 
+Gameplay video: https://youtu.be/QZDfrHlEhj4
+
 uMario: https://github.com/jakowskidev/uMario_Jakowski
 
 
