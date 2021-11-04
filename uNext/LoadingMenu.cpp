@@ -19,8 +19,8 @@ void LoadingMenu::Update() {
 	if(SDL_GetTicks() >= iTime + 2500 + (loadingType ? 0 : 2750)) {
 		if(loadingType) {
 			if(!CCore::getMap()->getInEvent()) {
-				CCore::getMap()->setSpawnPoint();
 				CCore::getMap()->loadLVL();
+				CCore::getMap()->setSpawnPoint();
 			}
 			CCFG::getMM()->setViewID(CCFG::getMM()->eGame);
 			CCFG::getMusic()->changeMusic(true, true);

@@ -3649,9 +3649,9 @@ void Map::resetGameData() {
 
 	oPlayer->setNumOfLives(3);
 
-	setSpawnPoint();
-
 	loadLVL();
+
+	setSpawnPoint();
 }
 
 void Map::loadLVL() {
