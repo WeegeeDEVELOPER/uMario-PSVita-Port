@@ -5,7 +5,7 @@
 /* ******************************************** */
 
 PauseMenu::PauseMenu(void) {
-	rPause.x = 220;
+	rPause.x = 300;
 	rPause.y = 140;
 	rPause.w = 360;
 	rPause.h = 142;
@@ -14,7 +14,7 @@ PauseMenu::PauseMenu(void) {
 	this->lMO.push_back(new MenuOption("OPTIONS", 0, 180));
 
 	this->lMO.push_back(new MenuOption("QUIT TO MENU", 0, 228));
-	this->lMO.push_back(new MenuOption("QUIT TO DESKTOP", 0, 252));
+	this->lMO.push_back(new MenuOption("QUIT TO HOMESCREEN", 0, 252));
 
 	this->numOfMenuOptions = lMO.size();
 }

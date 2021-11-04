@@ -19,11 +19,14 @@ void Menu::Update() {
 }
 
 void Menu::Draw(SDL_Renderer* rR) {
+
+	float psvitaOffset = 20;
+
 	for(unsigned int i = 0; i < lMO.size(); i++) {
-		CCFG::getText()->Draw(rR, lMO[i]->getText(), lMO[i]->getXPos(), lMO[i]->getYPos());
+		CCFG::getText()->Draw(rR, lMO[i]->getText(), lMO[i]->getXPos(), lMO[i]->getYPos() + psvitaOffset);
 	}
 
-	CCFG::getMM()->getActiveOption()->Draw(rR, lMO[activeMenuOption]->getXPos() - 32, lMO[activeMenuOption]->getYPos());
+	CCFG::getMM()->getActiveOption()->Draw(rR, lMO[activeMenuOption]->getXPos() - 32, lMO[activeMenuOption]->getYPos() + psvitaOffset);
 }
 
 /* ******************************************** */

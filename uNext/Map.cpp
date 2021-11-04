@@ -425,39 +425,42 @@ void Map::DrawMinions(SDL_Renderer* rR) {
 }
 
 void Map::DrawGameLayout(SDL_Renderer* rR) {
-	CCFG::getText()->Draw(rR, "MARIO", 54, 16);
+
+	float psvitaOffset = 70;
+
+	CCFG::getText()->Draw(rR, "MARIO", 54 + psvitaOffset, 16);
 
 	if(oPlayer->getScore() < 100) {
-		CCFG::getText()->Draw(rR, "00000" + std::to_string(oPlayer->getScore()), 54, 32);
+		CCFG::getText()->Draw(rR, "00000" + std::to_string(oPlayer->getScore()), 54 + psvitaOffset, 32);
 	} else if(oPlayer->getScore() < 1000) {
-		CCFG::getText()->Draw(rR, "000" + std::to_string(oPlayer->getScore()), 54, 32);
+		CCFG::getText()->Draw(rR, "000" + std::to_string(oPlayer->getScore()), 54 + psvitaOffset, 32);
 	} else if(oPlayer->getScore() < 10000) {
-		CCFG::getText()->Draw(rR, "00" + std::to_string(oPlayer->getScore()), 54, 32);
+		CCFG::getText()->Draw(rR, "00" + std::to_string(oPlayer->getScore()), 54 + psvitaOffset, 32);
 	} else if(oPlayer->getScore() < 100000) {
-		CCFG::getText()->Draw(rR, "0" + std::to_string(oPlayer->getScore()), 54, 32);
+		CCFG::getText()->Draw(rR, "0" + std::to_string(oPlayer->getScore()), 54 + psvitaOffset, 32);
 	} else {
-		CCFG::getText()->Draw(rR, std::to_string(oPlayer->getScore()), 54, 32);
+		CCFG::getText()->Draw(rR, std::to_string(oPlayer->getScore()), 54 + psvitaOffset, 32);
 	}
 
-	CCFG::getText()->Draw(rR, "WORLD", 462, 16);
-	CCFG::getText()->Draw(rR, getLevelName(), 480, 32);
+	CCFG::getText()->Draw(rR, "WORLD", 462 + psvitaOffset, 16);
+	CCFG::getText()->Draw(rR, getLevelName(), 480 + psvitaOffset, 32);
 
 	if(iLevelType != 1) {
-		vBlock[2]->Draw(rR, 268, 32);
+		vBlock[2]->Draw(rR, 268 + psvitaOffset, 32);
 	} else {
-		vBlock[57]->Draw(rR, 268, 32);
+		vBlock[57]->Draw(rR, 268 + psvitaOffset, 32);
 	}
-	CCFG::getText()->Draw(rR, "y", 286, 32);
-	CCFG::getText()->Draw(rR, (oPlayer->getCoins() < 10 ? "0" : "") + std::to_string(oPlayer->getCoins()), 302, 32);
+	CCFG::getText()->Draw(rR, "y", 286 + psvitaOffset, 32);
+	CCFG::getText()->Draw(rR, (oPlayer->getCoins() < 10 ? "0" : "") + std::to_string(oPlayer->getCoins()), 302 + psvitaOffset, 32);
 
-	CCFG::getText()->Draw(rR, "TIME", 672, 16);
+	CCFG::getText()->Draw(rR, "TIME", 672 + psvitaOffset, 16);
 	if(CCFG::getMM()->getViewID() == CCFG::getMM()->eGame) {
 		if(iMapTime > 100) {
-			CCFG::getText()->Draw(rR, std::to_string(iMapTime), 680, 32);
+			CCFG::getText()->Draw(rR, std::to_string(iMapTime), 680 + psvitaOffset, 32);
 		} else if(iMapTime > 10) {
-			CCFG::getText()->Draw(rR, "0" + std::to_string(iMapTime), 680, 32);
+			CCFG::getText()->Draw(rR, "0" + std::to_string(iMapTime), 680 + psvitaOffset, 32);
 		} else {
-			CCFG::getText()->Draw(rR, "00" + std::to_string(iMapTime), 680, 32);
+			CCFG::getText()->Draw(rR, "00" + std::to_string(iMapTime), 680 + psvitaOffset, 32);
 		}
 	}
 }
@@ -3614,7 +3617,7 @@ int Map::getSpawnPointYPos(int iID) {
 					return CCFG::GAME_HEIGHT - 48 - oPlayer->getHitBoxY();;
 			}
 		case 3: case 7: case 11: case 15: case 19: case 23: case 27: case 31:
-			return 230;
+			return 270;
 	}
 
 	return CCFG::GAME_HEIGHT - 48 - oPlayer->getHitBoxY();

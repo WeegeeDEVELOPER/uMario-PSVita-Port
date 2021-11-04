@@ -34,10 +34,13 @@ void MainMenu::Update() {
 }
 
 void MainMenu::Draw(SDL_Renderer* rR) {
-	CCFG::getSMBLOGO()->Draw(rR, 80, 48);
+
+	float psvitaOffset = 20;
+
+	CCFG::getSMBLOGO()->Draw(rR, 80, 48 + psvitaOffset);
 	Menu::Draw(rR);
-	CCFG::getText()->Draw(rR, "UMARIO VERSION 1.2.3", 4, CCFG::GAME_HEIGHT - 4 - 8, 8, 0, 0, 0);
-	CCFG::getText()->Draw(rR, "UMARIO VERSION 1.2.3", 5, CCFG::GAME_HEIGHT - 5 - 8, 8, 255, 255, 255);
+	CCFG::getText()->Draw(rR, "UMARIO VERSION 1.2.4", 4, CCFG::GAME_HEIGHT - 4 - 8, 8, 0, 0, 0);
+	CCFG::getText()->Draw(rR, "UMARIO VERSION 1.2.4", 5, CCFG::GAME_HEIGHT - 5 - 8, 8, 255, 255, 255);
 
 	if(selectWorld) {
 		SDL_SetRenderDrawBlendMode(rR, SDL_BLENDMODE_BLEND);
