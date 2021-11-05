@@ -7721,3 +7721,31 @@ Copyright (C) 2020 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
+The target system is: Generic - 1 - armv7-a
+The host system is: Linux - 5.10.16.3-microsoft-standard-WSL2 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/local/vitasdk/bin/arm-vita-eabi-gcc 
+Build flags: ;-Wl,-q
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/CMakeFiles/3.16.3/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/local/vitasdk/bin/arm-vita-eabi-g++ 
+Build flags: ;-Wl,-q
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/CMakeFiles/3.16.3/CompilerIdCXX/a.out"
+
