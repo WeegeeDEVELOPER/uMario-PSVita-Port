@@ -41,7 +41,7 @@ CCore::CCore(void) {
 		quitGame = true;
 	}
 
-	rR = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	rR = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
 	// ----- ICO
 	std::string fileName = "app0:/uNext/files/images/ico.bmp";
