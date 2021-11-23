@@ -100,19 +100,19 @@ void CCore::vitaInputLoop(){
 		mainEvent->type = SDL_KEYDOWN;
 	}
 	
-	if ((ctrl.buttons & SCE_CTRL_CROSS) != 0 || (ctrl.buttons & SCE_CTRL_TRIANGLE) != 0){
+	if ((ctrl.buttons & SCE_CTRL_CIRCLE) != 0 || (ctrl.buttons & SCE_CTRL_SQUARE) != 0){
 		mainEvent->type = SDL_KEYDOWN;
 	}
-	else if ((ctrl.buttons & SCE_CTRL_CROSS) == 0 || (ctrl.buttons & SCE_CTRL_TRIANGLE) == 0){
+	else if ((ctrl.buttons & SCE_CTRL_CIRCLE) == 0 || (ctrl.buttons & SCE_CTRL_SQUARE) == 0){
 		if(CCFG::keySpace) {
 			CCFG::keySpace = false;
 		}
 	}
 	
-	if ((ctrl.buttons & SCE_CTRL_CIRCLE) != 0 || (ctrl.buttons & SCE_CTRL_SQUARE) != 0){
+	if ((ctrl.buttons & SCE_CTRL_CROSS) != 0 || (ctrl.buttons & SCE_CTRL_TRIANGLE) != 0){
 		mainEvent->type = SDL_KEYDOWN;
 	}
-	else if ((ctrl.buttons & SCE_CTRL_CIRCLE) == 0 || (ctrl.buttons & SCE_CTRL_SQUARE) == 0){
+	else if ((ctrl.buttons & SCE_CTRL_CROSS) == 0 || (ctrl.buttons & SCE_CTRL_TRIANGLE) == 0){
 		if(keyShift) {
 			oMap->getPlayer()->resetRun();
 			keyShift = false;
@@ -366,11 +366,11 @@ void CCore::InputPlayer() {
 				keyAPressed = false;
 			}
 		
-			if(/*mainEvent->key.keysym.sym == CCFG::keyIDSpace*/(ctrl.buttons & SCE_CTRL_CROSS) == 0 || (ctrl.buttons & SCE_CTRL_TRIANGLE) == 0) {
+			if(/*mainEvent->key.keysym.sym == CCFG::keyIDSpace*/(ctrl.buttons & SCE_CTRL_CIRCLE) == 0 || (ctrl.buttons & SCE_CTRL_SQUARE) == 0) {
 				CCFG::keySpace = false;
 			}
 		
-			if(/*mainEvent->key.keysym.sym == CCFG::keyIDShift*/(ctrl.buttons & SCE_CTRL_CIRCLE) == 0 || (ctrl.buttons & SCE_CTRL_SQUARE) == 0) {
+			if(/*mainEvent->key.keysym.sym == CCFG::keyIDShift*/(ctrl.buttons & SCE_CTRL_CROSS) == 0 || (ctrl.buttons & SCE_CTRL_TRIANGLE) == 0) {
 				if(keyShift) {
 					oMap->getPlayer()->resetRun();
 					keyShift = false;
@@ -405,14 +405,14 @@ void CCore::InputPlayer() {
 			}
 		}
 		
-		if(/*mainEvent->key.keysym.sym == CCFG::keyIDSpace*/(ctrl.buttons & SCE_CTRL_CROSS) != 0 || (ctrl.buttons & SCE_CTRL_TRIANGLE) != 0) {
+		if(/*mainEvent->key.keysym.sym == CCFG::keyIDSpace*/(ctrl.buttons & SCE_CTRL_CIRCLE) != 0 || (ctrl.buttons & SCE_CTRL_SQUARE) != 0) {
 			if(!CCFG::keySpace) {
 				oMap->getPlayer()->jump();
 				CCFG::keySpace = true;
 			}
 		}
 		
-		if(/*mainEvent->key.keysym.sym == CCFG::keyIDShift*/(ctrl.buttons & SCE_CTRL_CIRCLE) != 0 || (ctrl.buttons & SCE_CTRL_SQUARE) != 0) {
+		if(/*mainEvent->key.keysym.sym == CCFG::keyIDShift*/(ctrl.buttons & SCE_CTRL_CROSS) != 0 || (ctrl.buttons & SCE_CTRL_TRIANGLE) != 0) {
 			if(!keyShift) {
 				oMap->getPlayer()->startRun();
 				keyShift = true;

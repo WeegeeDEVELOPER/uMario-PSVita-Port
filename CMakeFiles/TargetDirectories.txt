@@ -1,5 +1,0 @@
-/mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/CMakeFiles/edit_cache.dir
-/mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/CMakeFiles/uMario.vpk.dir
-/mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/CMakeFiles/uMario.self.dir
-/mnt/c/Users/Gebruiker/Desktop/C++/psvita/uMario_Vita/uMario-PSVita-Port/CMakeFiles/uMario.dir
