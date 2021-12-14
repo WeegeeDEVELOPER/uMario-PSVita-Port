@@ -7,11 +7,10 @@ uMario: https://github.com/jakowskidev/uMario_Jakowski
 
 
 # Controls
-- Cross = Jump
-- Circle = Run/Shoot
+- Cross = Jump, Menu Selection (Run/Shoot in 1.2.7)
+- Circle = Run/Shoot, Return (Jump in 1.2.7)
 - D-Pad = Move/Menu actions
-- Select = Pause/Back (in menu)
-- Start = Start (in menu)
+- Select = Pause
 
 # Requirements
 the PSV Homebrew SDK: https://vitasdk.org/
